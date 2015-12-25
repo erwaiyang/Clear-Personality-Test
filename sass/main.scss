@@ -12,16 +12,16 @@ $brown          : #A52A2A;
 $grey           : #A0A0A0;
 $black          : #000000;
 
-$primaryColor   : $pink;
-$secondaryColor : $grey;
+$primaryColor   : $orange;
+$secondaryColor : $blue;
 
 html, body {
 	height:100%;
 }
 .full-height{
 	position: relative;
-	height: 100%;
-	height:100vh;
+	min-height: 100%;
+	min-height:100vh;
 }
 .container{
 	position: absolute;
@@ -31,8 +31,17 @@ html, body {
 	transform: translateX(-50%) translateY(-50%);
 }
 div#intro{
-	background-color: $yellow;
+	background-color: rgba($blue, 0.5);
 }
 div#my-test{
-	background-color: $violet;
+	background-color: $yellow;
+}
+div#my-result{
+	// background-image: url(/img/result-bg.jpg);
+	// background-repeat: no-repeat;
+	// background-position: center center;
+	.container{
+		padding: 1em;
+		background-color: rgba(255,255,255, 0.8);
+	}
 }

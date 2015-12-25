@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="MyTestApp">
 <head>
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -12,26 +12,38 @@
 	<link rel="stylesheet" type="text/css" class="ui" href="./css/semantic.min.css" />
 	<link rel="stylesheet" type="text/css" href="./css/main.css" />
 </head>
-<body>
+<body ng-controller="TestCtrl as ctrl" >
 <!--intro-->
 <div id="intro" class="row full-height">
-	<div class="container">
-		<h1 class="ui header">Clear Taiwan 心理測驗</h1>
-		<p>我是介紹文字．我是文案．我是文案．</p>
+	<div id="intro-text" class="container">
+		<div class="ui vertical masthead center aligned segment">
+			<h1 class="ui header">Clear Taiwan 心理測驗</h1>
+			<p>我是介紹文字．我是文案．我是文案．</p>
+			<button id="start-btn" class="ui huge primary button">
+				馬上開始<i class="right arrow icon"></i>
+			</button>
+		</div>
+	</div>
+</div>
+<div class="ui page dimmer">
+	<div class="content">
+		<div class="center">
+			<p>Clear Taiwan FB粉絲團</p>
+			<div class="ui large primary button">Add</div>
+		</div>
 	</div>
 </div>
 <!--test-->
 <div id="my-test" class="row full-height">
 	<div class="container">
-		<h2 class="ui header">第{{q.no}}題</h2>
-		<p>{{q.question}}</p>
+		<h2 class="ui header">第 <strong>{{ctrl.q.no}}</strong> 題</h2>
+		<h1 class="ui header">{{ctrl.q.question}}</h1>
 		<div class="ui equal width stackable center aligned padded grid">
 			<div class="row">
-				<div class="column">
-					{{q.answer.content}}
-				</div>
-				<div class="column">
-					{{q.answer.content}}
+				<div ng-repeat="(key, val) in ctrl.q.answer" class="column">
+					<button ng-click="ctrl.goToDst(val.dst)" class="ui orange huge button">
+						{{val.content}}
+				</button>
 				</div>
 			</div>
 		</div>
@@ -41,11 +53,15 @@
 <div id="my-result" class="row full-height">
 	<div class="container">
 		<h2 class="ui dividing header">測驗結果！</h2>
-		<h1 class="ui header">您是<b>XX</b>型</h1>
-		<p>{{type.content}}</p>
-		<p>你非常務實，因此我們就不浪費時間開玩笑了。<br />對於想要確確實實烙印在腦海裏 真正達到讀書效果的你，康乃爾筆記法值得一試。先在筆記本的左側六公分處畫上垂直的線，右方寫下課堂筆記，左邊則是寫下關鍵字等等，在確實複習的時候使用的複習欄。<br />比起預習，複習更能確實的讓人記住內容，畢竟讀書就是要確實的讀進去嘛，不然要幹嘛XD?咳…我是說，這樣最有效果了。</p>
+		<h1 class="ui header">您是<b>{{ctrl.result.title}}</b></h1>
+		<p>{{ctrl.result.content}}</p>
 	</div>
 </div>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 <script src="./js/semantic.min.js"></script>
+<script src="./js/all.js"></script>
+
 </body>
 </html>

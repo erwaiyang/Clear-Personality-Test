@@ -9,11 +9,12 @@ var jasmine = require('gulp-jasmine-phantom');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 
-gulp.task('default', ['copy-html', 'copy-images', 'copy-json', 'styles', 'lint', 'scripts'], function() {
+gulp.task('default', ['copy-html', 'copy-images', 'copy-json', 'copy-framework', 'styles', 'lint', 'scripts'], function() {
 	gulp.watch('sass/**/*.scss', ['styles']);
-	gulp.watch('js/**/*.js', ['lint']);
+	gulp.watch('js/**/*.js', ['lint', 'scripts']);
 	gulp.watch('./index.html', ['copy-html']);
 	gulp.watch('./dist/index.html').on('change', browserSync.reload);
+	gulp.watch('./dist/js/*.js').on('change', browserSync.reload);
 
 	browserSync.init({
 		server: './dist'
@@ -54,6 +55,11 @@ gulp.task('copy-images', function() {
 gulp.task('copy-json', function() {
 	gulp.src('js/data/*.json')
 		.pipe(gulp.dest('./dist/js/data'));
+});
+
+gulp.task('copy-framework', function(){
+	gulp.src('./framework/**/*')
+		.pipe(gulp.dest('./dist'));
 });
 
 gulp.task('styles', function() {

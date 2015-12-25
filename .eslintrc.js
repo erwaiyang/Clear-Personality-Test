@@ -20,8 +20,12 @@ module.exports = {
         ]
     },
     "env": {
-        "browser": true,
+        "browser": 1,
         "node": true
+    },
+    "globals": {
+        "angular": 1,
+        "jQuery" : 1
     },
     "extends": "eslint:recommended"
 };
