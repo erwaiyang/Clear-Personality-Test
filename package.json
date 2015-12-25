@@ -1,0 +1,29 @@
+{
+  "name": "clear-test",
+  "version": "1.0.0",
+  "description": "Clear - Test",
+  "main": "gulpfile.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "website"
+  ],
+  "devDependencies": {
+    "browser-sync": "^2.10.0",
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-eslint": "^1.1.1",
+    "gulp-jasmine-phantom": "^2.0.1",
+    "gulp-phantom": "0.0.6",
+    "gulp-sass": "^2.1.1",
+    "gulp-uglify": "^1.5.1",
+    "jasmine-core": "^2.4.1"
+  },
+  "author": "erwaiyang",
+  "license": "ISC"
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+	<meta name="description" content="Clear Taiwan心理測驗" />
+	<meta name="keywords" content="心理測驗, Clear, Clear App" />
+
+	<title>Clear Taiwan 心理測驗</title>
+
+	<link rel="stylesheet" type="text/css" class="ui" href="./css/semantic.min.css" />
+	<link rel="stylesheet" type="text/css" href="./css/main.css" />
+</head>
+<body>
+<!--intro-->
+<div id="intro" class="row full-height">
+	<div class="container">
+		<h1 class="ui header">Clear Taiwan 心理測驗</h1>
+		<p>我是介紹文字．我是文案．我是文案．</p>
+	</div>
+</div>
+<!--test-->
+<div id="my-test" class="row full-height">
+	<div class="container">
+		<h2 class="ui header">第{{q.no}}題</h2>
+		<p>{{q.question}}</p>
+		<div class="ui equal width stackable center aligned padded grid">
+			<div class="row">
+				<div class="column">
+					{{q.answer.content}}
+				</div>
+				<div class="column">
+					{{q.answer.content}}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!--result-->
+<div id="my-result" class="row full-height">
+	<div class="container">
+		<h2 class="ui dividing header">測驗結果！</h2>
+		<h1 class="ui header">您是<b>XX</b>型</h1>
+		<p>{{type.content}}</p>
+		<p>你非常務實，因此我們就不浪費時間開玩笑了。<br />對於想要確確實實烙印在腦海裏 真正達到讀書效果的你，康乃爾筆記法值得一試。先在筆記本的左側六公分處畫上垂直的線，右方寫下課堂筆記，左邊則是寫下關鍵字等等，在確實複習的時候使用的複習欄。<br />比起預習，複習更能確實的讓人記住內容，畢竟讀書就是要確實的讀進去嘛，不然要幹嘛XD?咳…我是說，這樣最有效果了。</p>
+	</div>
+</div>
+<script src="./js/semantic.min.js"></script>
+</body>
+</html>
